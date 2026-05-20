@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager - Minhas Tarefas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📋 Sistema de Gestão</h1>
+        
+        <!-- ABAS -->
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="tasks">📝 Tarefas</button>
+            <button class="tab-btn" data-tab="farmers">🌾 Produtores Rurais</button>
+        </div>
+
+        <!-- ==================================== -->
+        <!-- ABA 1: TAREFAS (seu código original) -->
+        <!-- ==================================== -->
+        <div id="tasksTab" class="tab-content active">
+            <div class="add-task-area">
+                <input type="text" id="taskInput" placeholder="Digite sua tarefa...">
+                <select id="prioritySelect">
+                    <option value="alta">🔴 Alta Prioridade</option>
+                    <option value="media">🟡 Média Prioridade</option>
+                    <option value="baixa">🟢 Baixa Prioridade</option>
+                </select>
+                <button id="addBtn">+ Adicionar</button>
+            </div>
+
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">Todas</button>
+                <button class="filter-btn" data-filter="alta">Alta</button>
+                <button class="filter-btn" data-filter="media">Média</button>
+                <button class="filter-btn" data-filter="baixa">Baixa</button>
+                <button class="filter-btn" data-filter="completed">✅ Concluídas</button>
+                <button class="filter-btn" data-filter="pending">⏳ Pendentes</button>
+            </div>
+
+            <div id="tasksContainer"></div>
+
+            <div class="stats">
+                <span>Total: <span id="totalCount">0</span></span>
+                <span>Alta: <span id="altaCount">0</span></span>
+                <span>Média: <span id="mediaCount">0</span></span>
+                <span>Baixa: <span id="baixaCount">0</span></span>
+                <span>✅ Concluídas: <span id="completedCount">0</span></span>
+            </div>
+        </div>
+
+        <!-- ==================================== -->
+        <!-- ABA 2: PRODUTORES RURAIS -->
+        <!-- ==================================== -->
+        <div id="farmersTab" class="tab-content">
+            <h2>🌾 Cadastro de Produtores Rurais</h2>
+            
+            <!-- Área para adicionar produtor -->
+            <div class="add-farmer-area">
+                <input type="text" id="farmerName" placeholder="Nome do Produtor">
+                <input type="text" id="farmerCnpj" placeholder="CNPJ (apenas números)">
+                <input type="text" id="farmName" placeholder="Nome da Propriedade">
+                <button id="addFarmerBtn">+ Adicionar Produtor</button>
+            </div>
+
+            <!-- Barra de busca e ordenação -->
+            <div class="farmer-controls">
+                <input type="text" id="searchFarmer" placeholder="🔍 Buscar produtor...">
+                <button id="sortByNameBtn" class="sort-btn">📋 Ordenar A-Z</button>
+            </div>
+
+            <!-- Tabela de produtores -->
+            <div class="table-container">
+                <table class="farmers-table">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>CNPJ</th>
+                            <th>Propriedade</th>
+                            <th>Declaração</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="farmersContainer">
+                        <!-- Produtores serão inseridos aqui -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Estatísticas de produtores -->
+            <div class="farmer-stats">
+                <span>Total de Produtores: <span id="totalFarmers">0</span></span>
+                <span>📄 Declarações Pendentes: <span id="pendingDeclaration">0</span></span>
+                <span>✅ Declarações Entregues: <span id="completedDeclaration">0</span></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
