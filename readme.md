@@ -1,4 +1,4 @@
-# 🌾 Sistema de Gestão Agrícola
+# 🌾 Sistema de Gestão de Tarefas e controle de propriedades Agrícolas
 
 [![Status](https://img.shields.io/badge/status-concluído-brightgreen)]()
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)]()
